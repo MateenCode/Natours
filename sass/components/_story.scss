@@ -1,0 +1,35 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+
+    // This actualy creates a circle like shape
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    // This shows the circle like shape
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // The best way to move around element that float is to use transform no margins or padding
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img {
+    // Given a height 100% it referce the 100% of the parent in this case is 15rem
+    height: 100%;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+}
